@@ -216,3 +216,8 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+
+   node_modules/
+   dist/
+   lab_2_react/my-cv/
+   lab_2_react/vite-project/

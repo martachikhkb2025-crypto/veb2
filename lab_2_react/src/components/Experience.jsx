@@ -1,35 +1,26 @@
 function Experience() {
   return (
-    <>
-      <section>
-        <h2>Технічні навички</h2>
-        <ul>
-          <li><strong>Мови програмування:</strong> Python, C#</li>
-          <li><strong>Інструменти розробки:</strong> Git, Visual Studio Code, Ruff</li>
-          <li><strong>Кібербезпека та криптографія:</strong> Криптографічні алгоритми, основи стандарту ISO/IEC 27001, аналіз захищеності систем</li>
-          <li><strong>Бази даних:</strong> Проєктування та робота з реляційними БД (SQL)</li>
-          <li><strong>Математична база:</strong> Дискретна математика, вища математика</li>
-        </ul>
-      </section>
-
-      <section>
-        <h2>Навчальні проєкти</h2>
-        
-        <h3>Лабораторний практикум з кібербезпеки (Python)</h3>
-        <p>Репозиторій проєкту: <a href="https://github.com/martachikhkb2025-crypto/veb.git" target="_blank">cybersecurity-python-labs</a></p>
-        <ul>
+    <section className="bg-white p-6 rounded-xl border border-slate-200 shadow-sm">
+      <h2 className="text-2xl font-bold text-slate-800 mb-4 border-b-2 border-cyan-500 pb-2">Навчальні проєкти</h2>
+      
+      <div className="mb-6">
+        <h3 className="text-xl font-semibold text-slate-900">Лабораторний практикум з кібербезпеки (Python)</h3>
+        <a href="https://github.com/martachikhkb2025-crypto/veb.git" target="_blank" rel="noreferrer" className="text-cyan-600 hover:underline text-sm mb-3 block">Репозиторій проєкту</a>
+        <ul className="list-disc list-inside text-slate-700 space-y-1 ml-2">
           <li>Розробка консольних утиліт мовою Python для перевірки безпеки даних.</li>
-          <li>Реалізація базових криптографічних алгоритмів та інструментів аналізу.</li>
-          <li>Використання Git для контролю версій коду.</li>
+          <li>Реалізація базових криптографічних алгоритмів.</li>
+          <li>Використання Git для контролю версій.</li>
         </ul>
+      </div>
 
-        <h3>Аналіз систем управління інформаційною безпекою (СУІБ)</h3>
-        <ul>
-          <li>Вивчення вимог та принципів побудови СУІБ відповідно до стандарту ISO/IEC 27001.</li>
-          <li>Оцінка ризиків та розробка рекомендацій щодо захисту інформаційних ресурсів.</li>
+      <div>
+        <h3 className="text-xl font-semibold text-slate-900">Аналіз систем (СУІБ)</h3>
+        <ul className="list-disc list-inside text-slate-700 space-y-1 ml-2 mt-3">
+          <li>Вивчення вимог побудови СУІБ за стандартом ISO/IEC 27001.</li>
+          <li>Оцінка ризиків та розробка рекомендацій щодо захисту.</li>
         </ul>
-      </section>
-    </>
+      </div>
+    </section>
   );
 }
 
