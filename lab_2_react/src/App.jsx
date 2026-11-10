@@ -1,45 +1,50 @@
-import { useState, useEffect } from 'react';
-import Footer from './Footer';
-import Reviews from './Reviews';
-import ContactForm from './ContactForm';
+import { useState } from "react";
+import "./App.css";
 
-export default function App() {
-    const [theme, setTheme] = useState('light');
+function App() {
+  const [dark, setDark] = useState(false);
 
-    // Автоматичне визначення теми при завантаженні
-    useEffect(() => {
-        const currentHour = new Date().getHours();
-        setTheme((currentHour >= 7 && currentHour < 21) ? 'light' : 'dark');
-    }, []);
+  return (
+    <div className={dark ? "page dark" : "page"}>
+      <div className="container">
+        <div className="top-bar">
+          <button className="theme-btn" onClick={() => setDark(!dark)}>
+            {dark ? "☀️ Світла тема" : "🌙 Нічна тема"}
+          </button>
+        </div>
 
-    // Додавання/видалення класу dark-mode на тег <body> (як прописано у твоєму CSS)
-    useEffect(() => {
-        if (theme === 'dark') {
-            document.body.classList.add('dark-mode');
-        } else {
-            document.body.classList.remove('dark-mode');
-        }
-    }, [theme]);
+        <header className="card header">
+          <h1>Чіх Марта Романівна</h1>
+          <p>
+            Контактна інформація:{" "}
+            <a href="mailto:marta.chikh.kb.2025@lpnu.ua">
+              marta.chikh.kb.2025@lpnu.ua
+            </a>
+          </p>
+        </header>
 
-    const toggleTheme = () => {
-        setTheme(prevTheme => prevTheme === 'light' ? 'dark' : 'light');
-    };
+        <section className="card">
+          <h2>Про мене та Навички</h2>
+          <p>
+            Я — цілеспрямована студентка спеціальності «Кібербезпека» з інтересом до розробки вебзастосунків. Постійно опановую сучасні технології та прагну професійного розвитку в IT. Швидко навчаюся, вмію ефективно шукати та аналізувати інформацію, із задоволенням розв'язую складні логічні задачі.
+          </p>
+          <ul>
+            <li>Розуміння принципів роботи Інтернету та клієнт-серверної архітектури</li>
+            <li>Тайм-менеджмент та вміння працювати в команді</li>
+            <li>Англійська мова на рівні читання технічної документації</li>
+          </ul>
+        </section>
 
-    return (
-        <>
-            <header>
-                <h1>React Резюме</h1>
-                <button onClick={toggleTheme}>
-                    {theme === 'light' ? 'Увімкнути нічну тему' : 'Увімкнути денну тему'}
-                </button>
-            </header>
-            
-            <main>
-                <Reviews />
-            </main>
-            
-            <ContactForm />
-            <Footer />
-        </>
-    );
+        <section className="card">
+          <h2>Освіта</h2>
+          <p>
+            Національний університет «Львівська політехніка», спеціальність
+            125 «Кібербезпека»
+          </p>
+        </section>
+      </div>
+    </div>
+  );
 }
+
+export default App;
