@@ -1,0 +1,136 @@
+/* 1. Керування блоковою моделлю (Box Model) */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f0f4f8;
+    color: #16034f;
+    line-height: 1.6;
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto; /* Центрування всього контенту */
+}
+
+/* 2. Селектори тегів та класів */
+h1, h2, h3 {
+    color: #0c047d;
+    margin-bottom: 12px;
+}
+
+ul {
+    list-style-type: square;
+    margin-left: 20px;
+    margin-bottom: 10px;
+}
+
+li {
+    margin-bottom: 8px;
+}
+
+.section {
+    margin-bottom: 30px;
+}
+
+/* 3. Макет на основі Flexbox */
+.layout {
+    display: flex;
+    gap: 40px; /* Відстань між колонками */
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.sidebar {
+    flex: 1; /* Ліва колонка займає 1 частину простору */
+    background-color: #f8fafc;
+    padding: 20px;
+    border-radius: 8px;
+    border-right: 2px solid #e2e8f0;
+}
+
+.content {
+    flex: 2; /* Права колонка вдвічі ширша за ліву */
+}
+
+/* 4. Селектор атрибута (всі посилання, що відкриваються в новій вкладці) */
+a[target="_blank"] {
+    color: #5538d2;
+    font-weight: bold;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+/* 5. ПСЕВДОКЛАСИ */
+/* Псевдоклас 1: :hover (реакція на наведення мишки) */
+a[target="_blank"]:hover {
+    color: #290af4;
+    text-decoration: underline;
+}
+
+/* Налаштування поля вводу */
+.search-input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #cbd5e1;
+    border-radius: 6px;
+    font-size: 14px;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+/* Псевдоклас 2: :focus (коли користувач клікнув у поле вводу) */
+.search-input:focus {
+    outline: none;
+    border-color: #100741;
+    box-shadow: 0 0 8px rgba(3, 53, 78, 0.4);
+}
+
+/* 6. МЕДІАЗАПИТ (Media Query) для мобільних екранів */
+@media (max-width: 768px) {
+    .layout {
+        flex-direction: column; /* Колонки стають одна під одною */
+        padding: 20px;
+        gap: 20px;
+    }
+    
+    .sidebar {
+        border-right: none;
+        border-bottom: 2px solid #e2e8f0;
+        margin-bottom: 20px;
+    }
+}
+
+/* Денна тема — за замовчуванням */
+body {
+  font-family: system-ui, sans-serif;
+  margin: 0;
+  background: #ffffff;
+  color: #1c1f26;
+  transition: background .3s, color .3s;
+}
+header, main, footer { max-width: 800px; margin: 0 auto; padding: 16px; }
+header { display: flex; justify-content: space-between; align-items: center; }
+button { padding: 8px 14px; border-radius: 8px; border: 1px solid #888; cursor: pointer; }
+
+.review {
+  border: 1px solid #ccc; border-radius: 10px;
+  padding: 12px 16px; margin-bottom: 12px;
+}
+.review h3 { margin: 0 0 6px; text-transform: capitalize; }
+
+footer { border-top: 1px solid #ccc; font-size: 13px; word-break: break-word; }
+
+dialog { max-width: 420px; width: 90%; border-radius: 12px; border: 1px solid #888; }
+dialog::backdrop { background: rgba(0, 0, 0, .5); }
+dialog label { display: block; margin-bottom: 10px; }
+dialog input, dialog textarea { display: block; width: 100%; box-sizing: border-box; padding: 6px; }
+
+/* Нічна тема — діє, коли в body є клас dark-mode */
+body.dark-mode { background: #14171f; color: #e6e9ef; }
+body.dark-mode .review, body.dark-mode footer { border-color: #3a4050; }
+body.dark-mode button { background: #232838; color: #e6e9ef; border-color: #555; }
+body.dark-mode dialog { background: #1c2030; color: #e6e9ef; }
